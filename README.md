@@ -38,6 +38,10 @@ A method is a function that is attached to an object.
 It's the combination of a function and the lexical environment within which that function was declared.
 
 4. Describe the four rules of the 'this' keyword.
+The first principle is the Global binding. Essentially if you simply console.log(this) in the global scope, it will give back an object called "Window". When you look under the hood of the window object it is the entire JavaScript language.
+The second principle is implicit binding. Say you have an object, and you have a method within your object, if you were to call that method using your obj and a dot after like, "obj.method(param)", whatever is on the left of the dot is "this". So in this case "this" is your object that you created.
+The third principle is the New binding. When we create a constructor for an object, we would then make a "new" object with those keys and values. When we say new, "this" will point to the object that was created from that constructor function.
+The fourth principle is explicit binding. Whenever we use .call() .bind() .apply(), we are changing the object in the parameter of those methods. So we are overriding what this is when we use those methods, and this will then be whatever object we made it with those specific methods.
 
 5. Why do we need super() in an extended class?
 While we call the parent class with the extends keyword, in order to access it's constructor we have to call super. So extends calls the class and super calls the constructor.
